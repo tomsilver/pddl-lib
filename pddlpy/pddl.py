@@ -23,6 +23,8 @@ from .pddlLexer import pddlLexer
 from .pddlParser import pddlParser
 from .pddlListener import pddlListener
 
+from collections import OrderedDict
+
 import itertools
 
 
@@ -72,7 +74,7 @@ class Operator():
     """
     def __init__(self, name):
         self.operator_name = name
-        self.variable_list = {}
+        self.variable_list = OrderedDict()
         self.precondition_pos = set()
         self.precondition_neg = set()
         self.effect_pos = set()
